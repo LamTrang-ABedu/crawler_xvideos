@@ -10,7 +10,7 @@ from googleapiclient.http import MediaFileUpload
 # Cấu hình Google Drive
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 SERVICE_ACCOUNT_FILE = 'credentials.json'
-DRIVE_FOLDER_ID = 'YOUR_DRIVE_FOLDER_ID'  # <-- Thay bằng ID thư mục Google Drive của bạn
+DRIVE_FOLDER_ID = '1qYDmgDAv56HmRevKei1d8SexTmNujxYp'  # <-- Thay bằng ID thư mục Google Drive của bạn
 
 credentials = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
