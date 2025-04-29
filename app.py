@@ -3,6 +3,8 @@ from utils.r2_manager import upload_media_list
 import threading
 import time
 
+app = Flask(__name__)
+
 def crawler_cycle():
     while True:
         print("[MediaCrawler] Start crawling Xvideos...")
