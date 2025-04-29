@@ -2,6 +2,7 @@ from utils.crawler import crawl_xvideos
 from utils.r2_manager import upload_media_list
 import threading
 import time
+from flask import Flask
 
 app = Flask(__name__)
 
