@@ -17,5 +17,6 @@ def upload_media_list(media, source):
     r2_client.put_object(
         Bucket=R2_BUCKET_NAME,
         Key=f"MEDIA/{source}_media.json",
-        Body=json.dumps(media, indent=2).encode('utf-8')
+        Body=media,
+        ContentType='application/json'
     )
