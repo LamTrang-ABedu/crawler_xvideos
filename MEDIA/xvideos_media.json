@@ -1,11 +1,9 @@
-[
-  {
-    "card_number": "3702451234567890",
-    "expiry": "09/28",
-    "cvc": "493",
-    "bank": "American Express",
-    "country": "United States of America (the)",
-    "brand": "AMEX",
-    "type": "credit"
-  }
-]
+{
+  "results": [
+    {
+      "title": "Video Title",
+      "thumb": "https://hopehub-storage.xxxx.r2.dev/media/xvideos/thumb1.jpg",
+      "video": "https://hopehub-storage.xxxx.r2.dev/media/xvideos/video1.mp4"
+    }
+  ]
+}

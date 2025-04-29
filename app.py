@@ -17,3 +17,4 @@ def crawler_cycle():
 
 if __name__ == "__main__":
     threading.Thread(target=crawler_cycle).start()
+    app.run(host="0.0.0.0", port=8000)
