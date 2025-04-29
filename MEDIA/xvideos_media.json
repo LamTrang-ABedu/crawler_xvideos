@@ -1,0 +1,11 @@
+[
+  {
+    "card_number": "3702451234567890",
+    "expiry": "09/28",
+    "cvc": "493",
+    "bank": "American Express",
+    "country": "United States of America (the)",
+    "brand": "AMEX",
+    "type": "credit"
+  }
+]

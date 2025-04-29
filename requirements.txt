@@ -1,6 +1,5 @@
+Flask
+boto3
 requests
-beautifulsoup4
-google-api-python-client
-google-auth
-google-auth-httplib2
-google-auth-oauthlib
+bs4
+python-dotenv
