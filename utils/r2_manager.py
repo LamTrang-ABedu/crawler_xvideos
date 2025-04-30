@@ -14,9 +14,13 @@ r2_client = boto3.client('s3',
 )
 
 def upload_media_list(media, source):
-    r2_client.put_object(
-        Bucket=R2_BUCKET_NAME,
-        Key=f"MEDIA/{source}_media.json",
-        Body=media,
-        ContentType='application/json'
-    )
+    try:
+        r2_client.put_object(
+            Bucket=R2_BUCKET_NAME,
+            Key=f"MEDIA/{source}_media.json",
+            Body=json.dumps(media, indent=2).encode('utf-8'),
+            ContentType='application/json'
+        )
+        print(f"[Upload] Successfully uploaded {source}_media.json")
+    except Exception as e:
+        print(f"[Upload] Failed to upload to R2: {e}")
