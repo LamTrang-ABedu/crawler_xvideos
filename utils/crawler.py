@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def crawl_xvideos(limit=30):
+def crawl_xvideos(limit=300):
     url = "https://www.xvideos.com/?k=popular"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
