@@ -69,7 +69,6 @@ def crawl_xvideos(limit=112):
             soup = BeautifulSoup(driver.page_source, 'html.parser')
 
             cards = soup.select('div.thumb-inside')
-            cards = soup.select('div.thumb-inside')
             for card in cards:
                 a = card.find("a")
                 if not a:
@@ -77,12 +76,12 @@ def crawl_xvideos(limit=112):
                     continue
 
                 href = a.get('href')
-                print(f"[Crawl] Found href: {href}")
+                # print(f"[Crawl] Found href: {href}")
                 full_url = f"https://www.xvideos.com{href.strip()}" if href else None
 
                 img_tag = a.find('img')
                 thumb = img_tag.get('src') if img_tag else ''
-                print(f"[Crawl] Found thumb: {thumb}")
+                # print(f"[Crawl] Found thumb: {thumb}")
                 
                 # Tìm .thumb-under là sibling kế tiếp
                 sibling = card.find_next_sibling('div', class_='thumb-under')
@@ -91,10 +90,10 @@ def crawl_xvideos(limit=112):
                     continue
                 link_tag = sibling.select_one('p.title a')
                 title = (link_tag.get('title') or link_tag.text).strip()
-                print(f"[Crawl] Found title: {title}")
+                # print(f"[Crawl] Found title: {title}")
 
                 if full_url and thumb:
-                    # print(f"[Crawl] Found: {full_url} - {title.strip()}")
+                    print(f"[Crawl] Found: {full_url} - {title.strip()}")
                     results.append({
                         "video": full_url,
                         "thumb": thumb,
@@ -102,6 +101,8 @@ def crawl_xvideos(limit=112):
                     })
 
                     existing_urls.add(full_url)
+            # Upload sau mỗi trang
+            upload_media_list(results, source='xvideos')
 
         except Exception as e:
             print(f"[Crawler] Error: {e}")
