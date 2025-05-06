@@ -79,6 +79,10 @@ def crawl_xvideos(limit=112):
                 # print(f"[Crawl] Found href: {href}")
                 full_url = f"https://www.xvideos.com{href.strip()}" if href else None
 
+                if full_url in existing_urls:
+                    print(f"[Skip] Already exists: {full_url}")
+                    continue
+                        
                 img_tag = a.find('img')
                 thumb = img_tag.get('src') if img_tag else ''
                 # print(f"[Crawl] Found thumb: {thumb}")
