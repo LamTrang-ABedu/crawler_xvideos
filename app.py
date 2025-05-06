@@ -16,8 +16,10 @@ def crawler_cycle():
         else:
             print("[MediaCrawler] No media crawled.")
         print("[MediaCrawler] Sleep 4 hours...")
-        time.sleep(14400)  # 4 tiếng crawl lại
+        # time.sleep(14400)  # 4 tiếng crawl lại
 
+# if __name__ == "__main__":
+#     threading.Thread(target=crawler_cycle).start()
+#     app.run(host="0.0.0.0", port=9000)
 if __name__ == "__main__":
-    threading.Thread(target=crawler_cycle).start()
-    app.run(host="0.0.0.0", port=8000)
+    crawler_cycle()

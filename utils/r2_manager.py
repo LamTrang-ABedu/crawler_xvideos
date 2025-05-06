@@ -13,6 +13,17 @@ r2_client = boto3.client('s3',
     aws_secret_access_key=R2_SECRET_ACCESS_KEY
 )
 
+def load_existing_media(source='xvideos'):
+    try:
+        obj = r2_client.get_object(
+            Bucket=R2_BUCKET_NAME,
+            Key=f"MEDIA/{source}_media.json"
+        )
+        content = obj['Body'].read()
+        return json.loads(content)
+    except Exception:
+        return []  # Nếu chưa có file
+    
 def upload_media_list(media, source):
     try:
         r2_client.put_object(
