@@ -57,7 +57,7 @@ def setup_driver():
 
 def crawl_xvideos(limit=112):
     existing = load_existing_media(source='xvideos')
-    existing_urls = set(item["video"] for item in existing)
+    existing_urls = set(item["url"] for item in existing)
     results = existing.copy()
 
     driver = setup_driver()
@@ -101,7 +101,8 @@ def crawl_xvideos(limit=112):
                 if full_url and thumb:
                     print(f"[Crawl] Found: {full_url} - {title.strip()}")
                     results.append({
-                        "video": full_url,
+                        "type": "video",
+                        "url": full_url,
                         "thumb": thumb,
                         "title": title.strip()
                     })
